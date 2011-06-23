@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		290D7DCF13B346E30084B90F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290D7DCE13B346E30084B90F /* Cocoa.framework */; };
+		290D7DD913B346E30084B90F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 290D7DD713B346E30084B90F /* InfoPlist.strings */; };
+		290D7DDC13B346E30084B90F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DDB13B346E30084B90F /* main.m */; };
+		290D7DDF13B346E30084B90F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 290D7DDD13B346E30084B90F /* Credits.rtf */; };
+		290D7DE213B346E30084B90F /* CafeWatcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */; };
+		290D7DE513B346E30084B90F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290D7DE313B346E30084B90F /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		290D7DCA13B346E30084B90F /* CafeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		290D7DCE13B346E30084B90F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		290D7DD113B346E30084B90F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		290D7DD213B346E30084B90F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		290D7DD313B346E30084B90F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		290D7DD613B346E30084B90F /* CafeWatcher-Info.plist */ = {isa = PBXFileReference; path = "CafeWatcher-Info.plist"; sourceTree = "<group>"; };
+		290D7DD813B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		290D7DDA13B346E30084B90F /* CafeWatcher-Prefix.pch */ = {isa = PBXFileReference; path = "CafeWatcher-Prefix.pch"; sourceTree = "<group>"; };
+		290D7DDB13B346E30084B90F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		290D7DDE13B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		290D7DE013B346E30084B90F /* CafeWatcherAppDelegate.h */ = {isa = PBXFileReference; path = CafeWatcherAppDelegate.h; sourceTree = "<group>"; };
+		290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CafeWatcherAppDelegate.m; sourceTree = "<group>"; };
+		290D7DE413B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		290D7DC713B346E30084B90F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290D7DCF13B346E30084B90F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		290D7DBF13B346E30084B90F = {
+			isa = PBXGroup;
+			children = (
+				290D7DD413B346E30084B90F /* CafeWatcher */,
+				290D7DCD13B346E30084B90F /* Frameworks */,
+				290D7DCB13B346E30084B90F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		290D7DCB13B346E30084B90F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				290D7DCA13B346E30084B90F /* CafeWatcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		290D7DCD13B346E30084B90F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				290D7DCE13B346E30084B90F /* Cocoa.framework */,
+				290D7DD013B346E30084B90F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		290D7DD013B346E30084B90F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				290D7DD113B346E30084B90F /* AppKit.framework */,
+				290D7DD213B346E30084B90F /* CoreData.framework */,
+				290D7DD313B346E30084B90F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		290D7DD413B346E30084B90F /* CafeWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				290D7DE013B346E30084B90F /* CafeWatcherAppDelegate.h */,
+				290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */,
+				290D7DE313B346E30084B90F /* MainMenu.xib */,
+				290D7DD513B346E30084B90F /* Supporting Files */,
+			);
+			path = CafeWatcher;
+			sourceTree = "<group>";
+		};
+		290D7DD513B346E30084B90F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				290D7DD613B346E30084B90F /* CafeWatcher-Info.plist */,
+				290D7DD713B346E30084B90F /* InfoPlist.strings */,
+				290D7DDA13B346E30084B90F /* CafeWatcher-Prefix.pch */,
+				290D7DDB13B346E30084B90F /* main.m */,
+				290D7DDD13B346E30084B90F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		290D7DC913B346E30084B90F /* CafeWatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 290D7DE813B346E30084B90F /* Build configuration list for PBXNativeTarget "CafeWatcher" */;
+			buildPhases = (
+				290D7DC613B346E30084B90F /* Sources */,
+				290D7DC713B346E30084B90F /* Frameworks */,
+				290D7DC813B346E30084B90F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CafeWatcher;
+			productName = CafeWatcher;
+			productReference = 290D7DCA13B346E30084B90F /* CafeWatcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		290D7DC113B346E30084B90F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Katamari Inc.";
+			};
+			buildConfigurationList = 290D7DC413B346E30084B90F /* Build configuration list for PBXProject "CafeWatcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 290D7DBF13B346E30084B90F;
+			productRefGroup = 290D7DCB13B346E30084B90F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				290D7DC913B346E30084B90F /* CafeWatcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		290D7DC813B346E30084B90F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290D7DD913B346E30084B90F /* InfoPlist.strings in Resources */,
+				290D7DDF13B346E30084B90F /* Credits.rtf in Resources */,
+				290D7DE513B346E30084B90F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		290D7DC613B346E30084B90F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290D7DDC13B346E30084B90F /* main.m in Sources */,
+				290D7DE213B346E30084B90F /* CafeWatcherAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		290D7DD713B346E30084B90F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				290D7DD813B346E30084B90F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		290D7DDD13B346E30084B90F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				290D7DDE13B346E30084B90F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		290D7DE313B346E30084B90F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				290D7DE413B346E30084B90F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		290D7DE613B346E30084B90F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		290D7DE713B346E30084B90F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		290D7DE913B346E30084B90F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CafeWatcher/CafeWatcher-Prefix.pch";
+				INFOPLIST_FILE = "CafeWatcher/CafeWatcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		290D7DEA13B346E30084B90F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CafeWatcher/CafeWatcher-Prefix.pch";
+				INFOPLIST_FILE = "CafeWatcher/CafeWatcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		290D7DC413B346E30084B90F /* Build configuration list for PBXProject "CafeWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				290D7DE613B346E30084B90F /* Debug */,
+				290D7DE713B346E30084B90F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		290D7DE813B346E30084B90F /* Build configuration list for PBXNativeTarget "CafeWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				290D7DE913B346E30084B90F /* Debug */,
+				290D7DEA13B346E30084B90F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 290D7DC113B346E30084B90F /* Project object */;
+}
