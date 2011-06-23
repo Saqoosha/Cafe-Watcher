@@ -7,12 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MainWindow.h"
+#import "PathTableView.h"
 
 @interface CafeWatcherAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-    NSWindow *window;
+    MainWindow *window;
+    NSArrayController *paths;
+    PathTableView *table;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet MainWindow *window;
+@property (assign) IBOutlet NSArrayController *paths;
+@property (assign) IBOutlet PathTableView *table;
+
+- (IBAction)addFolder:(id)sender;
 
 @end

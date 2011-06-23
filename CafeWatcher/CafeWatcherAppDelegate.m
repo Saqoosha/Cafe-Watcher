@@ -7,14 +7,39 @@
 //
 
 #import "CafeWatcherAppDelegate.h"
+#import "Watcher.h"
+
 
 @implementation CafeWatcherAppDelegate
 
-@synthesize window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+@synthesize window;
+@synthesize paths;
+@synthesize table;
+
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 }
+
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
+}
+
+
+- (IBAction)addFolder:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseFiles:NO];
+    [panel setCanChooseDirectories:YES];
+    [panel setAllowsMultipleSelection:YES];
+    if ([panel runModal] == NSFileHandlingPanelOKButton) {
+        for (NSURL *url in [panel URLs]) {
+            Watcher *watcher = [[Watcher alloc] initWithURL:url];
+            [watcher watch];
+            [paths addObject:watcher];
+        }
+    }
+}
+
 
 @end
