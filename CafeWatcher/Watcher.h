@@ -15,7 +15,6 @@
     NSURL *url_;
     NSTask *task_;
     NSFileHandle *fileHandle_;
-    int state_;
 }
 
 - (id)initWithURL:(NSURL *)url;

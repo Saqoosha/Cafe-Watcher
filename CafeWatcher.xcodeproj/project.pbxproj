@@ -14,7 +14,6 @@
 		290D7DE213B346E30084B90F /* CafeWatcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */; };
 		290D7DE513B346E30084B90F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290D7DE313B346E30084B90F /* MainMenu.xib */; };
 		290D7DED13B34FD80084B90F /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DEC13B34FD80084B90F /* MainWindow.m */; };
-		290D7DF013B351720084B90F /* PathTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DEF13B351720084B90F /* PathTableView.m */; };
 		298D4DC513B6689A000BB705 /* LogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D4DC413B6689A000BB705 /* LogWindow.m */; };
 		299FB2C613B39B0E00203488 /* Watcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 299FB2C513B39B0E00203488 /* Watcher.m */; };
 		29A409E413B834EF00082EE0 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A409E313B834EF00082EE0 /* Growl.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -55,8 +54,6 @@
 		290D7DE413B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		290D7DEB13B34FD80084B90F /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		290D7DEC13B34FD80084B90F /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
-		290D7DEE13B351720084B90F /* PathTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathTableView.h; sourceTree = "<group>"; };
-		290D7DEF13B351720084B90F /* PathTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathTableView.m; sourceTree = "<group>"; };
 		298D4DC313B6689A000BB705 /* LogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogWindow.h; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/LogWindow.h; sourceTree = "<group>"; };
 		298D4DC413B6689A000BB705 /* LogWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogWindow.m; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/LogWindow.m; sourceTree = "<group>"; };
 		299FB2C413B39B0E00203488 /* Watcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Watcher.h; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/Watcher.h; sourceTree = "<group>"; };
@@ -65,8 +62,8 @@
 		29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		29A409F013B8591500082EE0 /* accepted_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accepted_48.png; sourceTree = "<group>"; };
 		29A409F113B8591500082EE0 /* cancel_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_48.png; sourceTree = "<group>"; };
-		29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1309156311_Coffee.png; sourceTree = "<group>"; };
-		29A409F613B85C3900082EE0 /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Untitled.icns; sourceTree = "<group>"; };
+		29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1309156311_Coffee.png; path = ../1309156311_Coffee.png; sourceTree = "<group>"; };
+		29A409F613B85C3900082EE0 /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Untitled.icns; path = ../Untitled.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +82,6 @@
 		290D7DBF13B346E30084B90F = {
 			isa = PBXGroup;
 			children = (
-				29A409F613B85C3900082EE0 /* Untitled.icns */,
-				29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */,
 				290D7DD413B346E30084B90F /* CafeWatcher */,
 				290D7DCD13B346E30084B90F /* Frameworks */,
 				290D7DCB13B346E30084B90F /* Products */,
@@ -127,16 +122,13 @@
 				290D7DE013B346E30084B90F /* CafeWatcherAppDelegate.h */,
 				290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */,
 				290D7DE313B346E30084B90F /* MainMenu.xib */,
-				290D7DD513B346E30084B90F /* Supporting Files */,
 				290D7DEB13B34FD80084B90F /* MainWindow.h */,
 				290D7DEC13B34FD80084B90F /* MainWindow.m */,
-				290D7DEE13B351720084B90F /* PathTableView.h */,
-				290D7DEF13B351720084B90F /* PathTableView.m */,
 				299FB2C413B39B0E00203488 /* Watcher.h */,
 				299FB2C513B39B0E00203488 /* Watcher.m */,
 				298D4DC313B6689A000BB705 /* LogWindow.h */,
 				298D4DC413B6689A000BB705 /* LogWindow.m */,
-				29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */,
+				290D7DD513B346E30084B90F /* Supporting Files */,
 			);
 			path = CafeWatcher;
 			sourceTree = "<group>";
@@ -144,6 +136,9 @@
 		290D7DD513B346E30084B90F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */,
+				29A409F613B85C3900082EE0 /* Untitled.icns */,
+				29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */,
 				29A409F013B8591500082EE0 /* accepted_48.png */,
 				29A409F113B8591500082EE0 /* cancel_48.png */,
 				290D7DD613B346E30084B90F /* CafeWatcher-Info.plist */,
@@ -227,7 +222,6 @@
 				290D7DDC13B346E30084B90F /* main.m in Sources */,
 				290D7DE213B346E30084B90F /* CafeWatcherAppDelegate.m in Sources */,
 				290D7DED13B34FD80084B90F /* MainWindow.m in Sources */,
-				290D7DF013B351720084B90F /* PathTableView.m in Sources */,
 				299FB2C613B39B0E00203488 /* Watcher.m in Sources */,
 				298D4DC513B6689A000BB705 /* LogWindow.m in Sources */,
 			);

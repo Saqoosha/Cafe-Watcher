@@ -11,6 +11,10 @@
 #import "Growl.framework/Headers/GrowlApplicationBridge.h"
 
 
+NSString *node = nil;
+NSString *coffee = nil;
+
+
 @implementation CafeWatcherAppDelegate
 
 
@@ -31,12 +35,13 @@
             [watcher watch];
         }
     }
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(restart:)
+                                                 name:NSUserDefaultsDidChangeNotification
+                                               object:nil];
 }
 
-
-//- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
-//    return YES;
-//}
 
 - (void)save {
     NSArray *watchers = [paths content];
@@ -102,6 +107,23 @@
 - (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url {
     return CFURLHasDirectoryPath((CFURLRef)url) || [[url lastPathComponent] compare:browseNode_ ? @"node" : @"coffee"] == NSOrderedSame;
 }
+
+
+- (void)restart:(NSNotification *)notification {
+//    NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+//    NSString *n = [defaults objectForKey:@"node"];
+//    NSString *c = [defaults objectForKey:@"coffee"];
+//    if ([node compare:n] != NSOrderedSame || [coffee compare:c] != NSOrderedSame) {
+//        NSLog(@"updated, %@, %@", n, c);
+//        node = [n copy];
+//        coffee = [c copy];
+//        for (Watcher *watcher in [paths content]) {
+//            [watcher unwatch];
+//            [watcher watch];
+//        }
+//    }
+}
+
 
 
 @end

@@ -8,19 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MainWindow.h"
-#import "PathTableView.h"
 
 @interface CafeWatcherAppDelegate : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate> {
 @private
     MainWindow *window;
     NSArrayController *paths;
-    PathTableView *table;
+    NSTableView *table;
     BOOL browseNode_;
 }
 
 @property (assign) IBOutlet MainWindow *window;
 @property (assign) IBOutlet NSArrayController *paths;
-@property (assign) IBOutlet PathTableView *table;
+@property (assign) IBOutlet NSTableView *table;
 
 - (IBAction)addFolder:(id)sender;
 - (IBAction)deleteFolder:(id)sender;
