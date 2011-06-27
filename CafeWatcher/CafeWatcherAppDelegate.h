@@ -22,5 +22,6 @@
 @property (assign) IBOutlet PathTableView *table;
 
 - (IBAction)addFolder:(id)sender;
+- (IBAction)deleteFolder:(id)sender;
 
 @end
