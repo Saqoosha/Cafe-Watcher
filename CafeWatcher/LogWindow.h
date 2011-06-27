@@ -17,5 +17,6 @@
 
 + (void)appendLog:(NSString *)log;
 - (void)writeText:(NSString *)text;
+- (IBAction)clear:(id)sender;
 
 @end

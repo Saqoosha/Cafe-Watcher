@@ -46,9 +46,15 @@ static LogWindow *instance_;
     
     if (scrollToEnd) {
         // scroll to the end
-        NSRange range = NSMakeRange ([[textView string] length], 0);
+        NSRange range = NSMakeRange([[textView string] length], 0);
         [textView scrollRangeToVisible: range];
     }
+}
+
+
+- (IBAction)clear:(id)sender {
+    NSRange range = NSMakeRange(0, [[textView string] length]);
+    [[textView textStorage] deleteCharactersInRange:range];
 }
 
 

@@ -20,6 +20,10 @@
 		29A409E413B834EF00082EE0 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A409E313B834EF00082EE0 /* Growl.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		29A409E713B8351C00082EE0 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29A409E313B834EF00082EE0 /* Growl.framework */; };
 		29A409EB13B8390500082EE0 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */; };
+		29A409F213B8591500082EE0 /* accepted_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F013B8591500082EE0 /* accepted_48.png */; };
+		29A409F313B8591500082EE0 /* cancel_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F113B8591500082EE0 /* cancel_48.png */; };
+		29A409F513B85B7A00082EE0 /* 1309156311_Coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */; };
+		29A409F713B85C3900082EE0 /* Untitled.icns in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F613B85C3900082EE0 /* Untitled.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		290D7DCA13B346E30084B90F /* CafeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		290D7DCA13B346E30084B90F /* Café Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Café Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		290D7DCE13B346E30084B90F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		290D7DD113B346E30084B90F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		290D7DD213B346E30084B90F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -47,7 +51,7 @@
 		290D7DDB13B346E30084B90F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		290D7DDE13B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		290D7DE013B346E30084B90F /* CafeWatcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CafeWatcherAppDelegate.h; sourceTree = "<group>"; };
-		290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CafeWatcherAppDelegate.m; sourceTree = "<group>"; };
+		290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeWatcherAppDelegate.m; sourceTree = "<group>"; };
 		290D7DE413B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		290D7DEB13B34FD80084B90F /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		290D7DEC13B34FD80084B90F /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
@@ -59,6 +63,10 @@
 		299FB2C513B39B0E00203488 /* Watcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Watcher.m; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/Watcher.m; sourceTree = "<group>"; };
 		29A409E313B834EF00082EE0 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = CafeWatcher/Growl.framework; sourceTree = "<group>"; };
 		29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		29A409F013B8591500082EE0 /* accepted_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accepted_48.png; sourceTree = "<group>"; };
+		29A409F113B8591500082EE0 /* cancel_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_48.png; sourceTree = "<group>"; };
+		29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1309156311_Coffee.png; sourceTree = "<group>"; };
+		29A409F613B85C3900082EE0 /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Untitled.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,8 @@
 		290D7DBF13B346E30084B90F = {
 			isa = PBXGroup;
 			children = (
+				29A409F613B85C3900082EE0 /* Untitled.icns */,
+				29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */,
 				290D7DD413B346E30084B90F /* CafeWatcher */,
 				290D7DCD13B346E30084B90F /* Frameworks */,
 				290D7DCB13B346E30084B90F /* Products */,
@@ -86,7 +96,7 @@
 		290D7DCB13B346E30084B90F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				290D7DCA13B346E30084B90F /* CafeWatcher.app */,
+				290D7DCA13B346E30084B90F /* Café Watcher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +144,8 @@
 		290D7DD513B346E30084B90F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29A409F013B8591500082EE0 /* accepted_48.png */,
+				29A409F113B8591500082EE0 /* cancel_48.png */,
 				290D7DD613B346E30084B90F /* CafeWatcher-Info.plist */,
 				290D7DD713B346E30084B90F /* InfoPlist.strings */,
 				290D7DDA13B346E30084B90F /* CafeWatcher-Prefix.pch */,
@@ -161,7 +173,7 @@
 			);
 			name = CafeWatcher;
 			productName = CafeWatcher;
-			productReference = 290D7DCA13B346E30084B90F /* CafeWatcher.app */;
+			productReference = 290D7DCA13B346E30084B90F /* Café Watcher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,6 +210,10 @@
 				290D7DDF13B346E30084B90F /* Credits.rtf in Resources */,
 				290D7DE513B346E30084B90F /* MainMenu.xib in Resources */,
 				29A409EB13B8390500082EE0 /* Growl Registration Ticket.growlRegDict in Resources */,
+				29A409F213B8591500082EE0 /* accepted_48.png in Resources */,
+				29A409F313B8591500082EE0 /* cancel_48.png in Resources */,
+				29A409F513B85B7A00082EE0 /* 1309156311_Coffee.png in Resources */,
+				29A409F713B85C3900082EE0 /* Untitled.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +309,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CafeWatcher/CafeWatcher-Prefix.pch";
 				INFOPLIST_FILE = "CafeWatcher/CafeWatcher-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Café Watcher";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -312,7 +328,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CafeWatcher/CafeWatcher-Prefix.pch";
 				INFOPLIST_FILE = "CafeWatcher/CafeWatcher-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Café Watcher";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

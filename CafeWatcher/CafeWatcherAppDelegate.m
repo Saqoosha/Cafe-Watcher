@@ -69,4 +69,39 @@
 }
 
 
+- (IBAction)browseNode:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseFiles:YES];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowsMultipleSelection:NO];
+    [panel setDelegate:self];
+    browseNode_ = YES;
+    if ([panel runModal] == NSFileHandlingPanelOKButton) {
+        NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+        [defaults setValue:[[panel URL] path] forKey:@"node"];
+    }
+    [panel setDelegate:nil];
+}
+
+
+- (IBAction)browseCoffee:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseFiles:YES];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowsMultipleSelection:NO];
+    [panel setDelegate:self];
+    browseNode_ = NO;
+    if ([panel runModal] == NSFileHandlingPanelOKButton) {
+        NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+        [defaults setValue:[[panel URL] path] forKey:@"coffee"];
+    }
+    [panel setDelegate:nil];
+}
+
+
+- (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url {
+    return CFURLHasDirectoryPath((CFURLRef)url) || [[url lastPathComponent] compare:browseNode_ ? @"node" : @"coffee"] == NSOrderedSame;
+}
+
+
 @end

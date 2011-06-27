@@ -70,18 +70,22 @@
     
     NSLog(@"%@", text);
     [LogWindow appendLog:text];
+    BOOL failed;
     NSString *title;
-    if ([text hasPrefix:@"In "]) {
+    NSString *icon;
+    if ((failed = [text hasPrefix:@"In "])) {
         title = @"Compile Failed";
+        icon = @"cancel_48.png";
     } else {
         title = @"Compile Succeeded";
+        icon = @"accepted_48.png";
     }
     [GrowlApplicationBridge notifyWithTitle:title
                                 description:text
                            notificationName:title
-                                   iconData:nil
+                                   iconData:[[NSImage imageNamed:icon] TIFFRepresentation]
                                    priority:0
-                                   isSticky:NO
+                                   isSticky:failed
                                clickContext:nil];
     
     [text release];

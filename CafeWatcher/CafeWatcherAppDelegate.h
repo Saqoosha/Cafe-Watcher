@@ -10,11 +10,12 @@
 #import "MainWindow.h"
 #import "PathTableView.h"
 
-@interface CafeWatcherAppDelegate : NSObject <NSApplicationDelegate> {
+@interface CafeWatcherAppDelegate : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate> {
 @private
     MainWindow *window;
     NSArrayController *paths;
     PathTableView *table;
+    BOOL browseNode_;
 }
 
 @property (assign) IBOutlet MainWindow *window;
@@ -23,5 +24,7 @@
 
 - (IBAction)addFolder:(id)sender;
 - (IBAction)deleteFolder:(id)sender;
+- (IBAction)browseNode:(id)sender;
+- (IBAction)browseCoffee:(id)sender;
 
 @end
