@@ -13,12 +13,11 @@
     
 @private
     NSURL *url_;
-    NSTask *task_;
-    NSFileHandle *fileHandle_;
+    NSMutableDictionary *fileStats_;
 }
 
 - (id)initWithURL:(NSURL *)url;
-- (void)watch;
-- (void)unwatch;
+- (void)compileModifiedFiles;
+- (NSString *)path;
 
 @end

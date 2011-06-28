@@ -14,6 +14,8 @@
 		290D7DE213B346E30084B90F /* CafeWatcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */; };
 		290D7DE513B346E30084B90F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290D7DE313B346E30084B90F /* MainMenu.xib */; };
 		290D7DED13B34FD80084B90F /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DEC13B34FD80084B90F /* MainWindow.m */; };
+		2957828613B955C800C1BD73 /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2957828213B955C800C1BD73 /* SCEvent.m */; };
+		2957828713B955C800C1BD73 /* SCEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2957828513B955C800C1BD73 /* SCEvents.m */; };
 		298D4DC513B6689A000BB705 /* LogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D4DC413B6689A000BB705 /* LogWindow.m */; };
 		299FB2C613B39B0E00203488 /* Watcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 299FB2C513B39B0E00203488 /* Watcher.m */; };
 		29A409E413B834EF00082EE0 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A409E313B834EF00082EE0 /* Growl.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -21,8 +23,6 @@
 		29A409EB13B8390500082EE0 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */; };
 		29A409F213B8591500082EE0 /* accepted_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F013B8591500082EE0 /* accepted_48.png */; };
 		29A409F313B8591500082EE0 /* cancel_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F113B8591500082EE0 /* cancel_48.png */; };
-		29A409F513B85B7A00082EE0 /* 1309156311_Coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */; };
-		29A409F713B85C3900082EE0 /* Untitled.icns in Resources */ = {isa = PBXBuildFile; fileRef = 29A409F613B85C3900082EE0 /* Untitled.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		290D7DCA13B346E30084B90F /* Café Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Café Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		290D7DCA13B346E30084B90F /* Café Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Café Watcher.app"; path = "Café Watcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		290D7DCE13B346E30084B90F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		290D7DD113B346E30084B90F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		290D7DD213B346E30084B90F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -54,16 +54,19 @@
 		290D7DE413B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		290D7DEB13B34FD80084B90F /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		290D7DEC13B34FD80084B90F /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		2957828113B955C800C1BD73 /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCEvent.h; path = SCEvents/SCEvent.h; sourceTree = "<group>"; };
+		2957828213B955C800C1BD73 /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCEvent.m; path = SCEvents/SCEvent.m; sourceTree = "<group>"; };
+		2957828313B955C800C1BD73 /* SCEventListenerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCEventListenerProtocol.h; path = SCEvents/SCEventListenerProtocol.h; sourceTree = "<group>"; };
+		2957828413B955C800C1BD73 /* SCEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCEvents.h; path = SCEvents/SCEvents.h; sourceTree = "<group>"; };
+		2957828513B955C800C1BD73 /* SCEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCEvents.m; path = SCEvents/SCEvents.m; sourceTree = "<group>"; };
 		298D4DC313B6689A000BB705 /* LogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogWindow.h; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/LogWindow.h; sourceTree = "<group>"; };
 		298D4DC413B6689A000BB705 /* LogWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogWindow.m; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/LogWindow.m; sourceTree = "<group>"; };
 		299FB2C413B39B0E00203488 /* Watcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Watcher.h; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/Watcher.h; sourceTree = "<group>"; };
 		299FB2C513B39B0E00203488 /* Watcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Watcher.m; path = ../../../../../../Users/hiko/Dropbox/Projects/CafeWatcher/CafeWatcher/Watcher.m; sourceTree = "<group>"; };
 		29A409E313B834EF00082EE0 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = CafeWatcher/Growl.framework; sourceTree = "<group>"; };
-		29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.bplist; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		29A409F013B8591500082EE0 /* accepted_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accepted_48.png; sourceTree = "<group>"; };
 		29A409F113B8591500082EE0 /* cancel_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_48.png; sourceTree = "<group>"; };
-		29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1309156311_Coffee.png; path = ../1309156311_Coffee.png; sourceTree = "<group>"; };
-		29A409F613B85C3900082EE0 /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Untitled.icns; path = ../Untitled.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 				299FB2C513B39B0E00203488 /* Watcher.m */,
 				298D4DC313B6689A000BB705 /* LogWindow.h */,
 				298D4DC413B6689A000BB705 /* LogWindow.m */,
+				2957827F13B955B100C1BD73 /* SCEvent */,
 				290D7DD513B346E30084B90F /* Supporting Files */,
 			);
 			path = CafeWatcher;
@@ -137,8 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				29A409EA13B8390500082EE0 /* Growl Registration Ticket.growlRegDict */,
-				29A409F613B85C3900082EE0 /* Untitled.icns */,
-				29A409F413B85B7A00082EE0 /* 1309156311_Coffee.png */,
 				29A409F013B8591500082EE0 /* accepted_48.png */,
 				29A409F113B8591500082EE0 /* cancel_48.png */,
 				290D7DD613B346E30084B90F /* CafeWatcher-Info.plist */,
@@ -148,6 +150,18 @@
 				290D7DDD13B346E30084B90F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2957827F13B955B100C1BD73 /* SCEvent */ = {
+			isa = PBXGroup;
+			children = (
+				2957828113B955C800C1BD73 /* SCEvent.h */,
+				2957828213B955C800C1BD73 /* SCEvent.m */,
+				2957828413B955C800C1BD73 /* SCEvents.h */,
+				2957828513B955C800C1BD73 /* SCEvents.m */,
+				2957828313B955C800C1BD73 /* SCEventListenerProtocol.h */,
+			);
+			name = SCEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +221,6 @@
 				29A409EB13B8390500082EE0 /* Growl Registration Ticket.growlRegDict in Resources */,
 				29A409F213B8591500082EE0 /* accepted_48.png in Resources */,
 				29A409F313B8591500082EE0 /* cancel_48.png in Resources */,
-				29A409F513B85B7A00082EE0 /* 1309156311_Coffee.png in Resources */,
-				29A409F713B85C3900082EE0 /* Untitled.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +236,8 @@
 				290D7DED13B34FD80084B90F /* MainWindow.m in Sources */,
 				299FB2C613B39B0E00203488 /* Watcher.m in Sources */,
 				298D4DC513B6689A000BB705 /* LogWindow.m in Sources */,
+				2957828613B955C800C1BD73 /* SCEvent.m in Sources */,
+				2957828713B955C800C1BD73 /* SCEvents.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

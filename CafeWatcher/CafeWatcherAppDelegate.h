@@ -8,22 +8,31 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MainWindow.h"
+#import "SCEvents.h"
+#import "SCEventListenerProtocol.h"
 
-@interface CafeWatcherAppDelegate : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate> {
+
+@interface CafeWatcherAppDelegate : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate, SCEventListenerProtocol> {
 @private
     MainWindow *window;
     NSArrayController *paths;
     NSTableView *table;
+
+    SCEvents *events_;
+
     BOOL browseNode_;
 }
+
 
 @property (assign) IBOutlet MainWindow *window;
 @property (assign) IBOutlet NSArrayController *paths;
 @property (assign) IBOutlet NSTableView *table;
 
+
 - (IBAction)addFolder:(id)sender;
 - (IBAction)deleteFolder:(id)sender;
 - (IBAction)browseNode:(id)sender;
 - (IBAction)browseCoffee:(id)sender;
+
 
 @end

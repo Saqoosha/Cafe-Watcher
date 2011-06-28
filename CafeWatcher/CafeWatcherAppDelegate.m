@@ -9,10 +9,13 @@
 #import "CafeWatcherAppDelegate.h"
 #import "Watcher.h"
 #import "Growl.framework/Headers/GrowlApplicationBridge.h"
+#import "SCEvent.h"
 
 
-NSString *node = nil;
-NSString *coffee = nil;
+@interface CafeWatcherAppDelegate(Private)
+- (void)save;
+- (void)watch;
+@end
 
 
 @implementation CafeWatcherAppDelegate
@@ -26,20 +29,27 @@ NSString *coffee = nil;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [GrowlApplicationBridge setGrowlDelegate:@""];
     
+    events_ = [[SCEvents alloc] init];
+    [events_ setDelegate:self];
+    [events_ setNotificationLatency:0.5];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *data = [defaults objectForKey:@"watchers"];
     if (data) {
         NSArray *watchers = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         [paths addObjects:watchers];
-        for (Watcher *watcher in watchers) {
-            [watcher watch];
+        [self watch];
+    }
+}
+
+
+- (void)pathWatcher:(SCEvents *)pathWatcher eventOccurred:(SCEvent *)event {
+//    NSLog(@"pathWatche: %@, %@", pathWatcher, event);
+    for (Watcher *watcher in [paths content]) {
+        if ([[watcher path] compare:[event eventPath]] == NSOrderedSame) {
+            [watcher compileModifiedFiles];
         }
     }
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(restart:)
-                                                 name:NSUserDefaultsDidChangeNotification
-                                               object:nil];
 }
 
 
@@ -52,6 +62,21 @@ NSString *coffee = nil;
 }
 
 
+- (void)watch {
+    [events_ flushEventStreamSync];
+    [events_ stopWatchingPaths];
+    
+    if ([[paths content] count] > 0) {
+        NSMutableArray *p = [[[NSMutableArray alloc] init] autorelease];
+        for (Watcher *watcher in [paths content]) {
+            [p addObject:[watcher path]];
+        }
+        [events_ startWatchingPaths:p];
+        NSLog(@"started: %@", [events_ streamDescription]);
+    }
+}
+
+
 - (IBAction)addFolder:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setCanChooseFiles:NO];
@@ -59,11 +84,10 @@ NSString *coffee = nil;
     [panel setAllowsMultipleSelection:YES];
     if ([panel runModal] == NSFileHandlingPanelOKButton) {
         for (NSURL *url in [panel URLs]) {
-            Watcher *watcher = [[[Watcher alloc] initWithURL:url] autorelease];
-            [watcher watch];
-            [paths addObject:watcher];
+            [paths addObject:[[[Watcher alloc] initWithURL:url] autorelease]];
         }
         [self save];
+        [self watch];
     }
 }
 
@@ -71,6 +95,7 @@ NSString *coffee = nil;
 - (IBAction)deleteFolder:(id)sender {
     [paths removeObjects:[paths selectedObjects]];
     [self save];
+    [self watch];
 }
 
 
@@ -107,23 +132,6 @@ NSString *coffee = nil;
 - (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url {
     return CFURLHasDirectoryPath((CFURLRef)url) || [[url lastPathComponent] compare:browseNode_ ? @"node" : @"coffee"] == NSOrderedSame;
 }
-
-
-- (void)restart:(NSNotification *)notification {
-//    NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
-//    NSString *n = [defaults objectForKey:@"node"];
-//    NSString *c = [defaults objectForKey:@"coffee"];
-//    if ([node compare:n] != NSOrderedSame || [coffee compare:c] != NSOrderedSame) {
-//        NSLog(@"updated, %@, %@", n, c);
-//        node = [n copy];
-//        coffee = [c copy];
-//        for (Watcher *watcher in [paths content]) {
-//            [watcher unwatch];
-//            [watcher watch];
-//        }
-//    }
-}
-
 
 
 @end

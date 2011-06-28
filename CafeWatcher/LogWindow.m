@@ -23,6 +23,8 @@ static LogWindow *instance_;
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
     if ((self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag])) {
         instance_ = self;
+        dateFormatter_ = [[NSDateFormatter alloc] init];
+        [dateFormatter_ setDateFormat:@"HH:mm:ss.SSS"];
     }
     return self;
 }
@@ -41,7 +43,8 @@ static LogWindow *instance_;
     
     NSFont *font = [NSFont fontWithName:@"Menlo" size:12.0];
     NSDictionary *attributes = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
-    NSAttributedString *stringToAppend = [[[NSAttributedString alloc] initWithString:text attributes:attributes] autorelease];
+    NSString *str = [NSString stringWithFormat:@"%@: %@", [dateFormatter_ stringFromDate:[NSDate date]], text];
+    NSAttributedString *stringToAppend = [[[NSAttributedString alloc] initWithString:str attributes:attributes] autorelease];
     [[textView textStorage] appendAttributedString:stringToAppend];
     
     if (scrollToEnd) {

@@ -11,12 +11,32 @@
 #import "Growl.framework/Headers/GrowlApplicationBridge.h"
 
 
+#define kSuccessIcon    @"accepted_48.png"
+#define kErrorIcon      @"cancel_48.png"
+
+
+@interface Watcher(Private)
+- (void)compileAll;
+- (void)compileCoffee:(NSURL *)file;
+- (void)notifyResult:(NSString *)title icon:(NSString *)icon text:(NSString *)text isSticky:(BOOL)isSticky;
+@end
+
+
 @implementation Watcher
 
 
 - (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
         url_ = [url copy];
+        fileStats_ = [[NSMutableDictionary alloc] init];
+        
+        NSFileManager *manager = [NSFileManager defaultManager];
+        NSDirectoryEnumerator *dir = [manager enumeratorAtPath:[url_ path]];
+        NSString *file;
+        while ((file = [dir nextObject])) {
+            [fileStats_ setObject:[[dir fileAttributes] fileModificationDate] forKey:file];
+        }
+        [self compileAll];
     }
     return self;
 }
@@ -33,101 +53,103 @@
 
 
 - (void)dealloc {
-    if (task_) [self unwatch];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [url_ release];
+    [fileStats_ release];
     [super dealloc];
 }
 
 
-- (void)watch {
-    NSString *path = [url_ path];
+- (void)compileAll {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *dir = [manager enumeratorAtPath:[url_ path]];
+    NSString *file;
+    while ((file = [dir nextObject])) {
+        NSDate *modified = [[dir fileAttributes] fileModificationDate];
+        if ([file hasSuffix:@".coffee"]) {
+            [self compileCoffee:[url_ URLByAppendingPathComponent:file]];
+        }
+        [fileStats_ setObject:modified forKey:file];
+    }
+}
 
-    task_ = [[NSTask alloc] init];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(terminated:)
-                                                 name:NSTaskDidTerminateNotification
-                                               object:task_];
-    NSPipe *pipe = [NSPipe pipe];
-    fileHandle_ = [pipe fileHandleForReading];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(readPipe:)
-                                                 name:NSFileHandleReadCompletionNotification
-                                               object:fileHandle_];
-    [fileHandle_ readInBackgroundAndNotify];
-    
+
+- (void)compileModifiedFiles {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *dir = [manager enumeratorAtPath:[url_ path]];
+    NSString *file;
+    while ((file = [dir nextObject])) {
+        NSDate *prev = [fileStats_ objectForKey:file];
+        NSDate *modified = [[dir fileAttributes] fileModificationDate];
+        if (prev == nil || [prev compare:modified] == NSOrderedAscending) {
+            if ([file hasSuffix:@".coffee"]) {
+                [self compileCoffee:[url_ URLByAppendingPathComponent:file]];
+            }
+        }
+        [fileStats_ setObject:modified forKey:file];
+    }
+}
+
+
+- (void)compileCoffee:(NSURL *)fileURL {
+    NSFileManager *manager = [NSFileManager defaultManager];
     NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
     NSString *node = [defaults objectForKey:@"node"];
+    if (![manager fileExistsAtPath:node]) {
+        [self notifyResult:@"Node executable not found"
+                      icon:kErrorIcon
+                      text:@"Please install Node and set correct path at Preferences."
+                  isSticky:NO];
+        NSBeep();
+        return;
+    }
     NSString *coffee = [defaults objectForKey:@"coffee"];
-    NSArray *args = [NSArray arrayWithObjects:coffee, @"-w",  @"-b",  @"-o", path, path, nil];
-    
-    NSLog(@"watch: %@, %@", node, args);
-    
-    [task_ setLaunchPath:node];
-    [task_ setArguments:args];
-    [task_ setStandardOutput:pipe];
-    [task_ setStandardError:pipe];
-    [task_ launch];
-}
-
-
-- (void)terminated:(NSNotification *)notification {
-    NSLog(@"terminated:%@", notification);
-}
-
-
-- (void)readPipe:(NSNotification *)notification {
-    if ([notification object] != fileHandle_) return;
-    
-    NSData *data = [[notification userInfo] objectForKey:NSFileHandleNotificationDataItem];
-    NSString *text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    if ([text length] > 0) {
-        NSLog(@"%@", text);
-        [LogWindow appendLog:text];
-        BOOL failed;
-        NSString *title;
-        NSString *icon;
-        if ((failed = [text hasPrefix:@"In "])) {
-            title = @"Compile Failed";
-            icon = @"cancel_48.png";
-        } else {
-            title = @"Compile Succeeded";
-            icon = @"accepted_48.png";
-        }
-        [GrowlApplicationBridge notifyWithTitle:title
-                                    description:text
-                               notificationName:title
-                                       iconData:[[NSImage imageNamed:icon] TIFFRepresentation]
-                                       priority:0
-                                       isSticky:failed
-                                   clickContext:nil];
+    if (![manager fileExistsAtPath:coffee]) {
+        [self notifyResult:@"CoffeeScript compiler not found"
+                      icon:kErrorIcon
+                      text:@"Please install CoffeeScript and set correct path at Preferences."
+                  isSticky:NO];
+        NSBeep();
+        return;
     }
-    [text release];
-
-    NSLog(@"readPipe:%d", [task_ isRunning]);
-    if (task_ && [task_ isRunning]) {
-        [fileHandle_ readInBackgroundAndNotify];
+    NSMutableArray *args = [NSMutableArray arrayWithObject:coffee];
+    if ([defaults boolForKey:@"bare"]) {
+        [args addObject:@"-b"];
+    }
+    [args addObject:@"-c"];
+    [args addObject:[fileURL path]];
+//    NSLog(@"compileCoffee: %@, %@", node, args);
+    
+    NSTask *task = [[[NSTask alloc] init] autorelease];
+    NSPipe *pipe = [NSPipe pipe];
+    [task setLaunchPath:node];
+    [task setArguments:args];
+    [task setStandardOutput:pipe];
+    [task setStandardError:pipe];
+    [task launch];
+    [task waitUntilExit];
+    
+    if ([task terminationStatus] == 0) {
+        [self notifyResult:@"Compile Succeeded" icon:kSuccessIcon text:[fileURL path] isSticky:NO];
     } else {
-        NSLog(@"%d", [task_ terminationStatus]);
-        [self unwatch];
+        NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
+        NSString *text = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+        NSLog(@"%@", text);
+        NSArray *lines = [text componentsSeparatedByString:@"\n"];
+        [self notifyResult:@"Compile Failed" icon:kErrorIcon text:[lines objectAtIndex:0] isSticky:YES];
+        NSBeep();
     }
 }
 
 
-- (void)unwatch {
-    if (!task_) return;
-    [task_ terminate];
-    task_ = nil;
-
-    NSData *data = [fileHandle_ readDataToEndOfFile];
-    NSString *text = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-    NSLog(@"unwatch: %@", text);
-    [LogWindow appendLog:text];
-    [fileHandle_ closeFile];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:NSFileHandleReadCompletionNotification
-                                                  object:fileHandle_];
-    fileHandle_ = nil;
+- (void)notifyResult:(NSString *)title icon:(NSString *)icon text:(NSString *)text isSticky:(BOOL)isSticky {
+    [LogWindow appendLog:[NSString stringWithFormat:@"%@: %@\n", title, text]];
+    [GrowlApplicationBridge notifyWithTitle:title
+                                description:text
+                           notificationName:title
+                                   iconData:[[NSImage imageNamed:icon] TIFFRepresentation]
+                                   priority:0
+                                   isSticky:isSticky
+                               clickContext:nil];
 }
 
 

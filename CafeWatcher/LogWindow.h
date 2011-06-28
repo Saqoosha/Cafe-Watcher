@@ -10,9 +10,11 @@
 
 
 @interface LogWindow : NSWindow {
-    
+@private
     IBOutlet NSScrollView *scrollView;
     IBOutlet NSTextView *textView;
+    
+    NSDateFormatter *dateFormatter_;
 }
 
 + (void)appendLog:(NSString *)log;
