@@ -31,8 +31,11 @@
 
 - (IBAction)addFolder:(id)sender;
 - (IBAction)deleteFolder:(id)sender;
+- (IBAction)editFolder:(id)sender;
+
 - (IBAction)browseNode:(id)sender;
 - (IBAction)browseCoffee:(id)sender;
+- (IBAction)browseEditor:(id)sender;
 
 
 @end

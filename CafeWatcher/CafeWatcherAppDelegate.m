@@ -15,6 +15,7 @@
 @interface CafeWatcherAppDelegate(Private)
 - (void)save;
 - (void)watch;
+- (void)doubleClicked:(id)hoge;
 @end
 
 
@@ -40,6 +41,13 @@
         [paths addObjects:watchers];
         [self watch];
     }
+    
+    [table setDoubleAction:@selector(doubleClicked:)];
+}
+
+
+- (void)doubleClicked:(id)sender {
+    [self editFolder:sender];
 }
 
 
@@ -99,6 +107,15 @@
 }
 
 
+- (IBAction)editFolder:(id)sender {
+    NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+    NSString *editor = [defaults stringForKey:@"editor"];
+    for (Watcher *watcher in [paths selectedObjects]) {
+        [[NSWorkspace sharedWorkspace] openFile:[watcher path] withApplication:editor];
+    }
+}
+
+
 - (IBAction)browseNode:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setCanChooseFiles:YES];
@@ -126,6 +143,19 @@
         [defaults setValue:[[panel URL] path] forKey:@"coffee"];
     }
     [panel setDelegate:nil];
+}
+
+
+- (IBAction)browseEditor:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseFiles:YES];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowsMultipleSelection:NO];
+    [panel setAllowedFileTypes:[NSArray arrayWithObject:@"app"]];
+    if ([panel runModal] == NSFileHandlingPanelOKButton) {
+        NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+        [defaults setValue:[[panel URL] path] forKey:@"editor"];
+    }
 }
 
 
