@@ -11,8 +11,8 @@
 #import "Growl.framework/Headers/GrowlApplicationBridge.h"
 
 
-#define kSuccessIcon    @"accepted_48.png"
-#define kErrorIcon      @"cancel_48.png"
+#define kSuccessIcon    @"Smiley.png"
+#define kErrorIcon      @"Smiley Sad Blue.png"
 
 
 @interface Watcher(Private)

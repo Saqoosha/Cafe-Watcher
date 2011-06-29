@@ -42,6 +42,8 @@
         [self watch];
     }
     
+    [table registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+    [table setDataSource:self];
     [table setDoubleAction:@selector(doubleClicked:)];
 }
 
@@ -161,6 +163,63 @@
 
 - (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url {
     return CFURLHasDirectoryPath((CFURLRef)url) || [[url lastPathComponent] compare:browseNode_ ? @"node" : @"coffee"] == NSOrderedSame;
+}
+
+
+- (NSDragOperation)tableView:(NSTableView *)aTableView
+                validateDrop:(id < NSDraggingInfo >)info
+                 proposedRow:(NSInteger)row
+       proposedDropOperation:(NSTableViewDropOperation)operation {
+    
+    if (operation == NSTableViewDropOn) {
+        return NSDragOperationNone;
+    }
+    
+    NSPasteboard *pasteBoard = [info draggingPasteboard];
+    NSArray *files = [pasteBoard propertyListForType:NSFilenamesPboardType];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    int dirs = 0;
+    BOOL isDir;
+    for (NSString *file in files) {
+        if ([fileManager fileExistsAtPath:file isDirectory:&isDir]) {
+            if (isDir) dirs++;
+        }
+    }
+    
+    if (dirs > 0) {
+        return NSDragOperationCopy;
+    }
+    return NSDragOperationNone;
+}
+
+
+- (BOOL)tableView:(NSTableView *)aTableView
+       acceptDrop:(id < NSDraggingInfo >)info
+              row:(NSInteger)row
+    dropOperation:(NSTableViewDropOperation)operation {
+    
+    NSPasteboard *pasteBoard = [info draggingPasteboard];
+    NSArray *files = [pasteBoard propertyListForType:NSFilenamesPboardType];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    int dirs = 0;
+    BOOL isDir;
+    for (NSString *file in files) {
+        if ([fileManager fileExistsAtPath:file isDirectory:&isDir]) {
+            if (isDir) {
+                NSURL *url = [NSURL fileURLWithPath:file];
+                Watcher *watcher = [[[Watcher alloc] initWithURL:url] autorelease];
+                [paths insertObject:watcher atArrangedObjectIndex:row];
+                row++;
+                dirs++;
+            }
+        }
+    }
+    if (dirs > 0) {
+        [self save];
+        [self watch];
+        return YES;
+    }
+    return NO;
 }
 
 
