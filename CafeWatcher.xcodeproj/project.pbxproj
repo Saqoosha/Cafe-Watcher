@@ -14,6 +14,8 @@
 		290D7DE213B346E30084B90F /* CafeWatcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */; };
 		290D7DE513B346E30084B90F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290D7DE313B346E30084B90F /* MainMenu.xib */; };
 		290D7DED13B34FD80084B90F /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D7DEC13B34FD80084B90F /* MainWindow.m */; };
+		294C7DCC13BB411C007178E9 /* PathListTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 294C7DCB13BB411C007178E9 /* PathListTable.m */; };
+		294C7DD013BB45CA007178E9 /* UCFilePathTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 294C7DCF13BB45CA007178E9 /* UCFilePathTextField.m */; };
 		2957828613B955C800C1BD73 /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2957828213B955C800C1BD73 /* SCEvent.m */; };
 		2957828713B955C800C1BD73 /* SCEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2957828513B955C800C1BD73 /* SCEvents.m */; };
 		298D4DC513B6689A000BB705 /* LogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D4DC413B6689A000BB705 /* LogWindow.m */; };
@@ -54,6 +56,10 @@
 		290D7DE413B346E30084B90F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		290D7DEB13B34FD80084B90F /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
 		290D7DEC13B34FD80084B90F /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		294C7DCA13BB411C007178E9 /* PathListTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathListTable.h; sourceTree = "<group>"; };
+		294C7DCB13BB411C007178E9 /* PathListTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathListTable.m; sourceTree = "<group>"; };
+		294C7DCE13BB45CA007178E9 /* UCFilePathTextField.h */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.h; path = UCFilePathTextField.h; sourceTree = "<group>"; };
+		294C7DCF13BB45CA007178E9 /* UCFilePathTextField.m */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.c.objc; path = UCFilePathTextField.m; sourceTree = "<group>"; };
 		2957828113B955C800C1BD73 /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCEvent.h; path = SCEvents/SCEvent.h; sourceTree = "<group>"; };
 		2957828213B955C800C1BD73 /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCEvent.m; path = SCEvents/SCEvent.m; sourceTree = "<group>"; };
 		2957828313B955C800C1BD73 /* SCEventListenerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCEventListenerProtocol.h; path = SCEvents/SCEventListenerProtocol.h; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 		290D7DD413B346E30084B90F /* CafeWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				294C7DCE13BB45CA007178E9 /* UCFilePathTextField.h */,
+				294C7DCF13BB45CA007178E9 /* UCFilePathTextField.m */,
 				290D7DE013B346E30084B90F /* CafeWatcherAppDelegate.h */,
 				290D7DE113B346E30084B90F /* CafeWatcherAppDelegate.m */,
 				290D7DE313B346E30084B90F /* MainMenu.xib */,
@@ -131,6 +139,8 @@
 				299FB2C513B39B0E00203488 /* Watcher.m */,
 				298D4DC313B6689A000BB705 /* LogWindow.h */,
 				298D4DC413B6689A000BB705 /* LogWindow.m */,
+				294C7DCA13BB411C007178E9 /* PathListTable.h */,
+				294C7DCB13BB411C007178E9 /* PathListTable.m */,
 				2957827F13B955B100C1BD73 /* SCEvent */,
 				290D7DD513B346E30084B90F /* Supporting Files */,
 			);
@@ -238,6 +248,8 @@
 				298D4DC513B6689A000BB705 /* LogWindow.m in Sources */,
 				2957828613B955C800C1BD73 /* SCEvent.m in Sources */,
 				2957828713B955C800C1BD73 /* SCEvents.m in Sources */,
+				294C7DCC13BB411C007178E9 /* PathListTable.m in Sources */,
+				294C7DD013BB45CA007178E9 /* UCFilePathTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

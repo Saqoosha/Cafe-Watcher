@@ -158,4 +158,9 @@
 }
 
 
+- (NSString *)description {
+    return [url_ path];
+}
+
+
 @end
