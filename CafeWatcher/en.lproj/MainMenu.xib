@@ -1905,7 +1905,7 @@
 					</object>
 				</object>
 				<object class="NSView" key="NSWindowView" id="938983965">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1924,8 +1924,7 @@
 											<int key="NSvFlags">2322</int>
 											<string key="NSFrameSize">{465, 14}</string>
 											<reference key="NSSuperview" ref="1055202287"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="608577250"/>
+											<reference key="NSNextKeyView" ref="386583197"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="282347163">
 												<object class="NSLayoutManager" key="NSLayoutManager">
 													<object class="NSTextStorage" key="NSTextStorage">
@@ -2008,7 +2007,6 @@
 									</object>
 									<string key="NSFrame">{{1, 1}, {465, 270}}</string>
 									<reference key="NSSuperview" ref="771342567"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="425688523"/>
 									<reference key="NSDocView" ref="425688523"/>
 									<reference key="NSBGColor" ref="562877797"/>
@@ -2023,8 +2021,6 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{466, 1}, {15, 270}}</string>
 									<reference key="NSSuperview" ref="771342567"/>
-									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<reference key="NSTarget" ref="771342567"/>
 									<string key="NSAction">_doScroller:</string>
 									<double key="NSCurValue">1</double>
@@ -2035,7 +2031,6 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 									<reference key="NSSuperview" ref="771342567"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="1055202287"/>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="771342567"/>
@@ -2046,8 +2041,7 @@
 							</object>
 							<string key="NSFrame">{{-1, -1}, {482, 272}}</string>
 							<reference key="NSSuperview" ref="938983965"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="386583197"/>
+							<reference key="NSNextKeyView" ref="1055202287"/>
 							<int key="NSsFlags">18</int>
 							<reference key="NSVScroller" ref="608577250"/>
 							<reference key="NSHScroller" ref="386583197"/>
@@ -2055,8 +2049,6 @@
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {480, 270}}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="771342567"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
@@ -2072,7 +2064,7 @@
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="672678077">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2329,7 +2321,6 @@
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {482, 205}}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="807365071"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
@@ -2351,23 +2342,6 @@
 			</object>
 			<object class="NSUserDefaultsController" id="215131102">
 				<bool key="NSSharedInstance">YES</bool>
-			</object>
-			<object class="NSWindowTemplate" id="889752837">
-				<int key="NSWindowStyleMask">15</int>
-				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{245, 301}, {480, 270}}</string>
-				<int key="NSWTFlags">611844096</int>
-				<string key="NSWindowTitle">Window</string>
-				<string key="NSWindowClass">NSWindow</string>
-				<nil key="NSViewClass"/>
-				<object class="NSView" key="NSWindowView" id="406446909">
-					<reference key="NSNextResponder"/>
-					<int key="NSvFlags">256</int>
-					<string key="NSFrame">{{7, 11}, {480, 270}}</string>
-					<reference key="NSSuperview"/>
-				</object>
-				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
-				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -4749,20 +4723,6 @@
 						<reference key="object" ref="512976300"/>
 						<reference key="parent" ref="1063068652"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">707</int>
-						<reference key="object" ref="889752837"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="406446909"/>
-						</object>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">708</int>
-						<reference key="object" ref="406446909"/>
-						<reference key="parent" ref="889752837"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -5057,9 +5017,6 @@
 					<string>696.IBPluginDependency</string>
 					<string>697.IBPluginDependency</string>
 					<string>705.IBPluginDependency</string>
-					<string>707.IBPluginDependency</string>
-					<string>707.NSWindowTemplate.visibleAtLaunch</string>
-					<string>708.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
 					<string>73.IBPluginDependency</string>
@@ -5418,9 +5375,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
